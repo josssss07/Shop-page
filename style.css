@@ -1,0 +1,12 @@
+body{
+    margin: 0px;
+}
+
+.nav-bar{
+    position: fixed;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+	height: 100px;
+	background-color:#855DA7;
+}
