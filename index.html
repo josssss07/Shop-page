@@ -2,21 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
 <body>
-  <nav><h1>Nav</h1>  </nav>
-    <div class="card-container">
-      <div class="card">
-        <div>hehhe</div>
+  <!--background-->
+  <div class="animated">
+    <div class="one"></div>
+      <div class="two"></div>
+      <div class="three"></div>
+      <div class="four"></div>
+      <div class="seven"></div>
+      <div class="five"></div>
+      <div class="six"></div>
+  </div>
+
+<!--Nav bar-->
+<nav id="navbar">
+  <div class="nav-container">
+    <button class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="menu">
+      <div class="nav-item">
+        <a aria-label="Link to Home Page" href="#">Home</a>
       </div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
+      <div class="nav-item">
+        <a
+          aria-label="Link to Home Page"
+          href="../pages/Contact/index.html"
+          >Contact</a
+        >
+      </div>
+      <div class="nav-item">
+        <a
+          href="http://linktr.ee/malharfest"
+          aria-label="Link to Announcements Page on Linktree"
+          >Announcements</a
+        >
+      </div>
+      <div class="nav-item">
+        <a href="../index.html" aria-label="Link to Events Page on Linktree"
+          >Events</a
+        >
+      </div>
+      <div class="nav-item">
+        <a
+          href="https://blog.malharfest.in"
+          aria-label="Link to Announcements Page on Linktree"
+          >Blog</a
+        >
+      </div>
+      <div class="nav-item">
+        <a aria-label="Link to Contact Us Page" href="#">Workforce</a>
+      </div>
     </div>
+
+    <div class="mobile-menu">
+      <a aria-label="Link to Home Page" href="#">Home</a>
+      <a
+        href="../pages/Contact/index.html"
+        aria-label="Link to Contact Us Page"
+        >Contact</a
+      >
+      <a
+        href="http://linktr.ee/malharfest"
+        aria-label="Link to Announcements Page on Linktree"
+        >Announcements</a
+      >
+      <a href="../index.html" aria-label="Link to Events Page on Linktree"
+        >Events</a
+      >
+      <a
+        href="https://blog.malharfest.in"
+        aria-label="Link to Official Malhar Blog"
+        >Blog</a
+      >
+      <a aria-label="Link to Workforce Page" href="#">Workforce</a>
+    </div>
+  </div>
+</nav>
+<div class="merchpage">
+  <h1>Merch Page</h1>
+</div>
+<!--cards body-->
+<div class="cards-container">
+  <!--card one -->
+  <div class="card"></div>
+</div>
+
+<!--nav bar js-->
+<script src="./nav.js"></script>
+  
 </body>
 </html>
