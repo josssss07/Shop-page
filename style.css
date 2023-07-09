@@ -53,16 +53,23 @@ nav > h1{
 }
 
 .card {
-  height:auto;
+  height: 300px;
   width: 300px;
   background-color: rgba(255, 255, 255, 1);
-  border-radius: 14px;
+  border-radius: 15%;
  
   color: black;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-end;
   text-align: center;
+  z-index: 33;
+}
+
+.cardimg{
+  height: 299px;
+  width: 299px;
+  border-radius: 15%;
 }
 
 
