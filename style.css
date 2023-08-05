@@ -127,11 +127,11 @@ nav > h1 {
 }
 
 .card {
-  width: 100%;
+  width: 120%;
   height: 400px;
   width: 300px;
   border-radius: 15px;
-  background: rgba(241, 238, 238, 0.932);
+  background: #b084bc;
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -536,3 +536,67 @@ nav {
 }
 
 /*navbar end*/
+
+
+
+/*
+
+ scrolling cards css test
+.container {
+  position: relative;
+  background: black;
+  max-width: 650px;
+  min-width: 650px;
+  height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+ }
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 340px;
+  height: 400px;
+  background: red;
+  margin: 5px;
+  transition: transform 0.5s, background 0.3s ease-in-out;
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      transform: translate(-170% + (120% * ($i - 1)), -50%);
+    }
+  }
+}
+
+.active {
+  background: yellow;
+  transform: translate(-50%, -50%) scale(1.1) !important;
+}
+
+.next {
+  .card {
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        transform: translate(-290% + (120% * ($i - 1)), -50%);
+      }
+    }
+  }
+}
+
+.reset {
+  .card {
+    transition: none;
+    .card {
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          transform: translate(-170% + (120% * ($i - 1)), -50%);
+        }
+      }
+    }
+  }
+}
+
+*/
