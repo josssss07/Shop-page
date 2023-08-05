@@ -113,7 +113,6 @@ nav > h1 {
   margin: auto;
 }
 
-
 .products-page-head {
   text-align: center;
   color: var(--light);
@@ -196,14 +195,20 @@ nav > h1 {
     height: 420px;
   }
   .carousel {
-    margin: 20px 0px;
-    padding: 10px;
+    margin: 0px 0px;
   }
-  .carousel-slide{
+  .carousel-slide {
     height: auto;
   }
-  .carousel-img{
+  .carousel-img {
     height: 500px;
+  }
+  .card:hover {
+    box-shadow: none;
+    transform: none;
+  }
+  .card:hover .cardimg {
+    transform: none;
   }
 }
 
@@ -627,13 +632,11 @@ nav {
 
 .carousel-img:hover {
   transform: scale(1.1);
-
 }
 
 .carousel-slide {
   display: inline-block;
   animation: 60s slide infinite linear;
-  
 }
 
 .carousel-img {
@@ -650,5 +653,4 @@ nav {
   to {
     transform: translateX(-100%);
   }
-  
 }
