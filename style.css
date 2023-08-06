@@ -68,7 +68,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 100vw;
+  min-width: 100%;
   -webkit-animation-duration: 1.5s;
   animation-duration: 1.5s;
   animation-fill-mode: both;
@@ -76,6 +76,7 @@ body {
   margin: 20px auto 0px auto;
   margin-top: 20px;
   padding-bottom: 70px;
+  text-align: center;
 }
 
 :root {
@@ -109,6 +110,7 @@ nav > h1 {
   /* grid-template-columns: repeat(auto-fit, minmax(300px, 40px)); */
   align-items: center;
   justify-items: center;
+  justify-content: center;
   column-gap: 60px;
   margin: auto;
 }
@@ -120,11 +122,10 @@ nav > h1 {
   font-weight: 500;
   font-size: 2.8rem;
   font-family: "Myriad Pro Regular", serif;
-  margin: 110px auto 40px auto;
+  margin: 110px auto 0px auto;
 }
 
 .card {
-  width: 100%;
   height: 400px;
   width: 400px;
   border-radius: 15px;
@@ -149,7 +150,7 @@ nav > h1 {
 
 .cardimg {
   display: block;
-  height: 480px;
+  height: 100%;
   transition: all 0.5s ease-in-out;
 }
 .card__title {
@@ -180,36 +181,6 @@ nav > h1 {
 
 .card:hover .cardimg {
   transform: scale(1.1);
-}
-
-@media (max-width: 800px) {
-  .card-container {
-    flex-direction: column;
-  }
-  .card {
-    height: 340px;
-    width: 340px;
-    margin: 20px 0px;
-  }
-  .cardimg {
-    height: 420px;
-  }
-  .carousel {
-    margin: 0px 0px;
-  }
-  .carousel-slide {
-    height: auto;
-  }
-  .carousel-img {
-    height: 500px;
-  }
-  .card:hover {
-    box-shadow: none;
-    transform: none;
-  }
-  .card:hover .cardimg {
-    transform: none;
-  }
 }
 
 .animated {
@@ -554,67 +525,7 @@ nav {
 
 /*navbar end*/
 
-/*
-
- scrolling cards css test
-.container {
-  position: relative;
-  background: black;
-  max-width: 650px;
-  min-width: 650px;
-  height: 600px;
-  margin: 0 auto;
-  overflow: hidden;
- }
-
-.card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: inline-block;
-  width: 340px;
-  height: 400px;
-  background: red;
-  margin: 5px;
-  transition: transform 0.5s, background 0.3s ease-in-out;
-
-  @for $i from 1 through 4 {
-    &:nth-child(#{$i}) {
-      transform: translate(-170% + (120% * ($i - 1)), -50%);
-    }
-  }
-}
-
-.active {
-  background: yellow;
-  transform: translate(-50%, -50%) scale(1.1) !important;
-}
-
-.next {
-  .card {
-    @for $i from 1 through 4 {
-      &:nth-child(#{$i}) {
-        transform: translate(-290% + (120% * ($i - 1)), -50%);
-      }
-    }
-  }
-}
-
-.reset {
-  .card {
-    transition: none;
-    .card {
-      @for $i from 1 through 4 {
-        &:nth-child(#{$i}) {
-          transform: translate(-170% + (120% * ($i - 1)), -50%);
-        }
-      }
-    }
-  }
-}
-
-*/
+/*carousel start*/
 
 .carousel {
   display: flex;
@@ -655,62 +566,164 @@ nav {
   }
 }
 
+/*carousel end*/
 
-/*button*/
-
-.cta {
-  border: none;
-  background: none;
-}
-
-.cta span {
-  padding-bottom: 7px;
-  letter-spacing: 4px;
-  font-size: 14px;
-  padding-right: 15px;
-  text-transform: uppercase;
-}
-
-.cta svg {
-  transform: translateX(-8px);
-  transition: all 0.3s ease;
-}
-
-.cta:hover svg {
-  transform: translateX(0);
-}
-
-.cta:active svg {
-  transform: scale(0.9);
-}
-
-.hover-underline-animation {
+/*buttons*/
+.button {
+  width: fit-content;
+  height: fit-content;
+  margin: 10px auto;
   position: relative;
-  color: var(--light);
-  padding-bottom: 20px;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 5px solid rgb(255, 0, 174);
+  font-family: "Fjalla One", sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
-.hover-underline-animation:after {
+.button:hover {
+  background: rgb(255, 0, 174);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.button:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.button::before {
   content: "";
+  display: block;
+  width: 0px;
+  height: 86%;
   position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--light);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
 }
 
-.cta:hover .hover-underline-animation:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
 }
 
+.button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
 
-.buttonmove{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 80px;
+/*buttons end*/
+
+@media (max-width: 1300px) {
+  .carousel {
+    width: 100lvw;
+    margin: 0px 0px;
+  }
+  .carousel-slide {
+    height: auto;
+  }
+  .carousel-img {
+    height: 500px;
+  }
+  .card-container {
+    column-gap: 20px;
+    width: 90%;
+  }
+  .card {
+    height: 320px;
+    width: 320px;
+  }
+}
+
+@media(max-width: 1024px) {
+  .card-container {
+    column-gap: 20px;
+    width: 90%;
+  }
+  .card {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@media (max-width: 800px) {
+  .card-container {
+    flex-direction: column;
+  }
+  .card {
+    height: 320px;
+    width: 320px;
+    margin: 10px 0px;
+  }
+  .cardimg {
+    height: 100%;
+  }
+  .carousel {
+    margin: 0px 0px;
+  }
+  .carousel-slide {
+    height: auto;
+  }
+  .carousel-img {
+    height: 500px;
+  }
+  .card:hover {
+    box-shadow: none;
+    transform: none;
+  }
+  .card:hover .cardimg {
+    transform: none;
+  }
+  .button {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .card-container {
+    flex-direction: column;
+  }
+  .card {
+    height: 270px;
+    width: 270px;
+    margin: 10px 0px;
+  }
+  .cardimg {
+    height: 100%;
+  }
+  .button {
+    font-size: 1rem;
+  }
 }
